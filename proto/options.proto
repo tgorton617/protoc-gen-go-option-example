@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "github.com/tgorton617/protoc-gen-go-option-example;protoc_gen_go_option_example";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+  optional string example_annotation_string = 1000;
+  optional int32 example_annotation_int32 = 1001;
+
+}
+
+message Foo {
+  option (example.example_annotation_string) = "hello";
+  option (example.example_annotation_int32) = 1234;
+
+  int32 id = 1;
+}
