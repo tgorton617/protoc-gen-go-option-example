@@ -18,3 +18,9 @@ message Foo {
 
   int32 id = 1;
 }
+
+message Bar {
+  option (example.example_annotation_string) = "world";
+
+  int32 id = 1;
+}
